@@ -1,0 +1,125 @@
+body
+{
+    background-image: url("Image/Background.jpg");
+    background-size: 100%;
+    margin: 0%;
+}
+
+#head1
+{
+    background-color: yellowgreen;
+}
+#navh
+{
+    background-color: wheat;
+}
+
+#formback
+{
+    background-color: white; 
+    opacity: 0.85;
+}
+
+h2
+{
+    color: yellow;    
+}
+
+#front
+{
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#foot1
+{
+    margin-top: 1.8%;
+    background-color: wheat;
+    bottom: 0%;
+    width: 100%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#foot11
+{
+    margin-top: 5%;
+    background-color: wheat;
+    bottom: 0%;
+    width: 100%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.img1
+{
+    display: inline-flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url("Image/Background.jpg");
+}
+
+#colo
+{
+    color: white;
+}
+
+.img1 img
+{
+    width: 400px;
+    height: 400px;
+}
+
+h3,h4
+{
+    color: rgba(255, 255, 255, 0.877);
+}
+
+#intro
+{
+    margin-left: 30px;
+    margin-right: 100px;
+
+}
+
+#train
+{
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+#mar
+{
+    color: red;
+    font-weight: bold;
+}
+
+.tlefttext {
+    position: absolute;
+    top: 95%;
+    left: 25%;
+}
+
+.trighttext {
+    position: absolute;
+    top: 95%;
+    left: 57%;
+}
+
+.blefttext {
+    position: absolute;
+    top: 168%;
+    left: 26%;
+}
+
+.brighttext {
+    position: absolute;
+    top: 168%;
+    left: 62%;
+}

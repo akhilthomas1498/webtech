@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="Style.css">
+  <script type="text/javascript" src="JavaS.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], input[type=password] {
+  width: 80%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<body>
+  <div id="head1">
+    <nav class="navbar navbar-default" id = "navh">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="Index.html">Fitness GYM</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="Train.html">Training</a></li>
+            <li><a href="Fit.html">Fitness</a></li>
+            <li><a href="Yoga.html">Yoga</a></li>
+            <li><a href="Diet.html">Diet</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>            
+</div>
+<div id = "formback">
+    <form name= "f1" method="post" >
+      <div class="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <label for="name"><b>Name:</b></label>&emsp;&emsp;
+          <input type="text" placeholder="Enter Name" name="nam" id = "nam" required>
+          <br>
+          <label for="sex"><b>Sex:</b></label>&emsp;&emsp;&emsp;
+          <input type="radio" id="sex" name="sex" value="Male" checked>
+          <label for="male">Male</label>    &emsp;&emsp;     
+          <input type="radio" id="sex" name="sex" value="Female">
+          <label for="female">Female</label> &emsp;&emsp;
+          <input type="radio" id="sex" name="sex" value="Others">
+          <label for="others">Others</label>
+          <br><br>
+          <label for="phone"><b>Phone No:</b></label>
+          <input type="text" placeholder="Enter Phone Number" id = "phone" name="phoneno" onfocusout ="ValidatePhone()" required>
+          <br>
+          <label for="email"><b>Email:</b></label>&emsp;&emsp;
+          <input type="text" placeholder="Enter Email" name="email" id = "mail" onfocusout ="ValidateEmail(document.f1.email)" required>
+          
+          <div class="clearfix">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn" onclick="submits()">Sign Up</button>
+          </div>
+      </div>
+    </form>
+   </div> 
+   <footer>
+    <div id="foot1">
+        <h6 style="text-align: center; margin-top: 20px; margin-bottom: 20px;">Copyright 1998-2022 by Refsnes Data. All Rights Reserved.</h6>         
+    </div>
+    </footer> 
+<script type="text/javascript">
+  function submits()
+  { 
+    if(document.getElementById("nam").value.length == 0)
+    {
+      alert("Enter the name.");
+      document.getElementById("nam").focus;
+    }
+    else if(document.getElementById('phone').value.length == 0)
+    {
+      alert("Enter phone number.");
+    }
+    else if(document.getElementById("mail").value.length == 0)
+    {
+      alert("Enter the mail.");
+      alert(document.getElementById('sex').value);
+      document.getElementById("mail").focus;
+    }
+    else
+    {
+      sendEmail();
+      alert("Sign up successful. Our representatives will contact you soon.!"); 
+      location.reload();
+    }
+
+    function sendEmail() {
+        Email.send({
+          Host: "smtp.gmail.com",
+          Username: "mca603@rajagiri.edu",
+          Password: "",
+          To: ["mca603@rajagiri.edu", document.getElementById("mail").value],
+          From: "mca603@rajagiri.edu",
+          Subject: "Sign up response mail",
+          Body: "<h4>Your sign up request is under process. Our representatives will contact you soon.</h4><br><h3>Name : </h3>" + document.getElementById("nam").value + "<br><h3>Sex : </h3>" + document.getElementById("sex").value + "<br><h3>Phone : </h3>" + document.getElementById("phone").value +"<br><h3>Email : </h3>" + document.getElementById("mail").value
+        })
+        //alert("Mail has been sent successfully");
+      }
+  }
+</script>
+</body>
+</html>
