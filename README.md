@@ -1,3 +1,3 @@
 # webtech
 WT_Webpage
-index
+index.html
